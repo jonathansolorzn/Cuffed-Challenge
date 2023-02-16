@@ -38,11 +38,9 @@ class MilestoneViewModel: ObservableObject {
                         renderer.proposedSize = .init(crop.size())
                         
                         if let imageSquare = renderer.uiImage {
-                            
-                            let imageData = image.pngData()
+                            let imageData = image.jpegData(compressionQuality: Scales.zeroPt)
                             profileImage = imageSquare
                             imageCode = imageData
-                            
                         }
                     })
                 }
